@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                bat 'mvn clean'
+                bat 'mvn compile'
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    def testExitCode = bat(script: 'mvn test', returnStatus: true)
+                    if (testExitCode != 0) {
+                        echo "⚠️ Algunos tests fallaron. Código: ${testExitCode}"
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
+            }
+        }
+    }
+
+    /*post {
+        always {
+            emailext (
+                subject: "Resultado del Job: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<p>Build finalizado.</p>
+                         <p>Estado: ${currentBuild.result}</p>
+                         <p>Revisar detalles en Jenkins: ${env.BUILD_URL}</p>""",
+                mimeType: 'text/html',
+                to: "hotdog112277@gmail.com"
+            )
+        }
+    }*/
+}
