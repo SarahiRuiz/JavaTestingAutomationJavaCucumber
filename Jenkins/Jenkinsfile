@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+	
     stages {
         stage('Build') {
             steps {
@@ -18,6 +18,24 @@ pipeline {
                     }
                 }
             }
+        }
+        stage('Reporte Cucumber') {
+            steps {
+                bat 'mvn verify'
+            }
+        }
+    }
+    post {
+        always {
+            // Publicar reportes JUnit si deseas
+            junit '**/target/surefire-reports/*.xml'
+
+            // Publicar el reporte HTML si usas HTML Publisher
+            publishHTML([
+                reportDir: 'target/cucumber-html-reports',
+                reportFiles: 'overview-features.html',
+                reportName: 'Reporte de Cucumber'
+            ])
         }
     }
 

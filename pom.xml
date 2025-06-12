@@ -39,12 +39,14 @@
       <artifactId>cucumber-junit</artifactId>
       <version>7.14.0</version>
     </dependency>
+  
+	<dependency>
+	    <groupId>Maven1</groupId>
+	    <artifactId>Art01</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	</dependency>
 
-    <dependency>
-    	<groupId>Maven1</groupId>
-    	<artifactId>Art01</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+
   </dependencies>
 
   <repositories>
