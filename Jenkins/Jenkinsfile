@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def testExitCode = bat(script: 'mvn test -Dcucumber.options="stc/test/java/features', returnStatus: true)
+                    def testExitCode = bat(script: 'mvn test', returnStatus: true)
                     if (testExitCode != 0) {
                         echo "⚠️ Algunos tests fallaron. Código: ${testExitCode}"
                         currentBuild.result = 'UNSTABLE'
@@ -23,19 +23,6 @@ pipeline {
             steps {
                 bat 'mvn verify'
             }
-        }
-    }
-    post {
-        always {
-            // Publicar reportes JUnit si deseas
-            junit '**/target/surefire-reports/*.xml'
-
-            // Publicar el reporte HTML si usas HTML Publisher
-            publishHTML([
-                reportDir: 'target/cucumber-html-reports',
-                reportFiles: 'overview-features.html',
-                reportName: 'Reporte de Cucumber'
-            ])
         }
     }
 
