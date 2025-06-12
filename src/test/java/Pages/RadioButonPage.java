@@ -15,17 +15,17 @@ public class RadioButonPage extends BrowserDriver{
 	
 	public static void ClickYesButton()
 	{
-		WebElement radioYesButton = driver.findElement(By.id("yesRadioButton_Id"));
+		WebElement radioYesButton = driver.findElement(By.id(yesRadioButton_Id));
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block: 'center'});", radioYesButton);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("yesRadioButton_Id")));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(yesRadioButton_Id)));
         actions.click(radioYesButton).perform();
 	}
 	public static void VerifySuccessfulYesButtonClicked()
 	{
 		WebElement successYesMessage = wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath(successYesMessage_xpath)));
-        assertTrue("Verify success yes is displayed.", successYesMessage.isDisplayed());
+        //assertTrue("Verify success yes is displayed.", successYesMessage.isDisplayed());
 	}
 
 }

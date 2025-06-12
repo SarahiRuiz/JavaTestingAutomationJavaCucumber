@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/features",//where to find scenarios
+    features = "src/test/java/features",//where to find scenarios
     glue = {"stepsDefinitions", "Utility" },//steps to follow
     plugin = {"pretty", "html:target/cucumber-report.html", "json:cucumber.json"},//To generate the report with results
     monochrome = true
