@@ -30,6 +30,7 @@ Feature: Radio Button Test Cases
   #  Then I validate the outcomes
   #  And check more outcomes
 
+	#Scenario Outline
   @Smoke1
   Scenario Outline:  Radio Button Yes
     Given Going To Page <url>
@@ -39,3 +40,15 @@ Feature: Radio Button Test Cases
     Examples: 
       | url  |
       | "https://demoqa.com/radio-button" |
+      
+  #Scenario Outline
+  @Smoke2
+  Scenario Outline:  Radio Button Dynamic Method
+    Given Going To Page <url>
+    When Click Dynamic Radio Button <radioButtonOption>
+    Then Verify Radio Button <expectedResult> Selected
+
+    Examples: 
+      | url                               |  radioButtonOption | expectedResult |
+      | "https://demoqa.com/radio-button" | "Yes"              | "Yes"        |
+      | "https://demoqa.com/radio-button" | "Impressive"       | "Impressive"        |
