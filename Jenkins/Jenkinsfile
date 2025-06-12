@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def testExitCode = bat(script: 'mvn test', returnStatus: true)
+                    def testExitCode = bat(script: 'mvn test -Dcucumber.options="stc/test/java/features', returnStatus: true)
                     if (testExitCode != 0) {
                         echo "⚠️ Algunos tests fallaron. Código: ${testExitCode}"
                         currentBuild.result = 'UNSTABLE'
