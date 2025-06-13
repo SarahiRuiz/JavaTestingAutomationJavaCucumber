@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import Utility.BrowserDriver;
+import Utility.Hooks;
 
 public class RadioButonPage extends BrowserDriver{
 	public static String yesRadioButton_Id = "yesRadio";
@@ -20,14 +21,12 @@ public class RadioButonPage extends BrowserDriver{
 		WebElement radioYesButton = driver.findElement(By.id(yesRadioButton_Id));
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block: 'center'});", radioYesButton);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(yesRadioButton_Id)));
         actions.click(radioYesButton).perform();
 	}
 	public static void VerifySuccessfulYesButtonClicked()
 	{
 		WebElement successYesMessage = wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath(successYesMessage_xpath)));
-        //assertTrue("Verify success yes is displayed.", successYesMessage.isDisplayed());
 	}
 	public static void ClickDynamicRadioButton(String radioButtonOption)
 	{
@@ -42,7 +41,6 @@ public class RadioButonPage extends BrowserDriver{
 			break;
 		}
 		WebElement radioButton = driver.findElement(By.id(radioButtonId));
-				//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(radioButtonId)));
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block: 'center'});", radioButton);
         actions.click(radioButton).perform();

@@ -5,15 +5,15 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    protected static BrowserDriver driver;
-
+    protected static BrowserDriver browser;
+    
     @Before
     public void SetUpTest() {
-        driver = new BrowserDriver();        
+    	browser = new BrowserDriver();   
     }
 
     @After
     public void TearDownTest() {
-        driver.close();
+        browser.close();
     }
 }

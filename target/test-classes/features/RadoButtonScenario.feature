@@ -20,18 +20,15 @@
 Feature: Radio Button Test Cases
   I want to use this template for radio button test cases
 
-  #@tag1
-  #Scenario: Radio Button Yes
-  #  Given I want to write a step with precondition
-  #  And some other precondition
-  #  When I complete action
-  #  And some other action
-  #  And yet another action
-  #  Then I validate the outcomes
-  #  And check more outcomes
+  #Scenario without parameters
+  @Smoke1
+  Scenario Outline:  Radio Button Yes
+    Given Going To Page "https://demoqa.com/radio-button"
+    When Wait And Select Radio Button Yes
+    Then Verify Radio Button Yes Selected
 
 	#Scenario Outline
-  @Smoke1
+  @Smoke2
   Scenario Outline:  Radio Button Yes
     Given Going To Page <url>
     When Wait And Select Radio Button Yes
@@ -42,7 +39,7 @@ Feature: Radio Button Test Cases
       | "https://demoqa.com/radio-button" |
       
   #Scenario Outline
-  @Smoke2
+  @Smoke3
   Scenario Outline:  Radio Button Dynamic Method
     Given Going To Page <url>
     When Click Dynamic Radio Button <radioButtonOption>
