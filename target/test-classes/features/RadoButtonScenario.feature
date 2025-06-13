@@ -23,29 +23,25 @@ Feature: Radio Button Test Cases
   #Scenario without parameters
   @Smoke1
   Scenario Outline:  Radio Button Yes
-    Given Going To Page "https://demoqa.com/radio-button"
+    Given Going To Page Radio Button
     When Wait And Select Radio Button Yes
     Then Verify Radio Button Yes Selected
 
-	#Scenario Outline
+	#Scenario
   @Smoke2
   Scenario Outline:  Radio Button Yes
-    Given Going To Page <url>
+    Given Going To Page Radio Button
     When Wait And Select Radio Button Yes
     Then Verify Radio Button Yes Selected
-
-    Examples: 
-      | url  |
-      | "https://demoqa.com/radio-button" |
       
   #Scenario Outline
   @Smoke3
   Scenario Outline:  Radio Button Dynamic Method
-    Given Going To Page <url>
+    Given Going To Page Radio Button
     When Click Dynamic Radio Button <radioButtonOption>
     Then Verify Radio Button <expectedResult> Selected
 
     Examples: 
-      | url                               |  radioButtonOption | expectedResult |
-      | "https://demoqa.com/radio-button" | "Yes"              | "Yes"        |
-      | "https://demoqa.com/radio-button" | "Impressive"       | "Impressive"        |
+      |  radioButtonOption | expectedResult |
+      | "Yes"              | "Yes"        |
+      | "Impressive"       | "Impressive"        |

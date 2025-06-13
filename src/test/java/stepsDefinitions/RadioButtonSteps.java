@@ -8,9 +8,9 @@ import static Pages.RadioButonPage.*;
 public class RadioButtonSteps extends BrowserDriver {
 
 
-    @Given("Going To Page {string}")
-    public void Going_To_Page(String urlPage) {
-        driver.get(urlPage);
+    @Given("Going To Page Radio Button")
+    public void Going_To_Page() {
+        driver.get("https://demoqa.com/radio-button");
     }
 
     @When("Wait And Select Radio Button Yes")

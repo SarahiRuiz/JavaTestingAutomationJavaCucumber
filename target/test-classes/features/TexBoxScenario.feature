@@ -22,11 +22,11 @@ Feature: Text Box Test Cases
 
   @Smoke1
   Scenario Outline: Text Box Valid
-    Given Going To Page <url>
+    Given Going To Page Text Box
     When Fill Full Name <FullName>
     And Fill Email <Email>
 
     Examples: 
-      | url                           |  FullName     | Email                   |
-      | "https://demoqa.com/text-box" | "Test Name"   | "test1@test.com"        |
-      | "https://demoqa.com/text-box" | "Test1 Name2" | "test2@test.com"        |
+      |  FullName     | Email                   |
+      | "Test Name"   | "test1@test.com"        |
+      | "Test1 Name2" | "test2@test.com"        |

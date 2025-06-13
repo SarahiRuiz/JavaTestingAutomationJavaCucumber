@@ -6,20 +6,22 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 
+import static Pages.TexBoxPage.*;
+
 public class TexBoxSteps extends BrowserDriver{
-	/*@Given("Going To Page {string}")
-    public void Going_To_Page(String urlPage) {
-        driver.get(urlPage);
-    }*/
+	@Given("Going To Page Text Box")
+    public void Going_To_Page() {
+        driver.get("https://demoqa.com/text-box");
+    }
 
     @When("Fill Full Name {string}")
     public void Fill_Full_Name(String FullName) {
-    	Fill_Full_Name(FullName);
+    	FillFullName(FullName);
     }
     
     @And("Fill Email {string}")
     public void Fill_Email(String Email) {
-    	Fill_Email(Email);
+    	FillEmail(Email);
     }
 
     /*@Then("Verify Radio Button Yes Selected")
