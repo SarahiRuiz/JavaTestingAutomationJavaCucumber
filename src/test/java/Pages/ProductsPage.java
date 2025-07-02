@@ -11,7 +11,7 @@ import Utility.BrowserDriver;
 public class ProductsPage extends BrowserDriver{
 
 	public static String ProdcutFilterDropdown_Class = "product_sort_container";
-	public static String FirstResultTitle_Class = "inventory_item_name ";
+	public static String FirstResultTitle_xpath = "//div[@class='inventory_item_name '] ";
 	
 	public static void FilterDropDownByIndex(int index)
 	{
@@ -30,7 +30,7 @@ public class ProductsPage extends BrowserDriver{
 	}
 	public static void FirstOptionShouldBe()
 	{
-		List<WebElement> firstOptionTitles = driver.findElements(By.className(FirstResultTitle_Class));
+		List<WebElement> firstOptionTitles = driver.findElements(By.xpath(FirstResultTitle_xpath));
 		String getTextfirstOptionTitle = firstOptionTitles.get(0).getText();
 		Assert.assertEquals(getTextfirstOptionTitle, "Sauce Labs Onesie");
 	}

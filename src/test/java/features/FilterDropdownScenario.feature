@@ -31,7 +31,7 @@ Feature: Filter Dropdown Test Cases
     
     Examples: 
       | userName        | password       | index  |
-      | "standard_user" | "secret_sauce" | 3      |
+      | "standard_user" | "secret_sauce" | 2      |
 
 	@tag1
   Scenario: Filter By Value
