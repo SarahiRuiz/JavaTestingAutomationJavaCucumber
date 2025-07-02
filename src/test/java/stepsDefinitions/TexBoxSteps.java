@@ -23,9 +23,24 @@ public class TexBoxSteps extends BrowserDriver{
     public void Fill_Email(String Email) {
     	FillEmail(Email);
     }
+    
+    @And("Fill Current Address {string}")
+    public void Fill_Current_Address(String currentAddress) {
+    	FillCurrentAddress(currentAddress);
+    }
+    
+    @And("Fill Permanent Address {string}")
+    public void Fill_Permanent_Address(String permanentAddress) {
+    	FillPermanentAddress(permanentAddress);
+    }
+    
+    @And("Click Submit")
+    public void Click_Submit_Button() {
+    	ClickSubmitButton();
+    }
 
-    /*@Then("Verify Radio Button Yes Selected")
-    public void Verify_Radio_Button_Yes_Selected() {
-    	VerifySuccessfulYesButtonClicked();
-    }*/
+    @Then("Verify Box Result Displayed")
+    public void Verify_Box_Result_Displayed() {
+    	VerifyBoxResultDisplayed();
+    }
 }

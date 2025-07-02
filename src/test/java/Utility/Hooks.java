@@ -14,6 +14,6 @@ public class Hooks {
 
     @After
     public void TearDownTest() {
-        browser.close();
+        browser.driver.quit();
     }
 }

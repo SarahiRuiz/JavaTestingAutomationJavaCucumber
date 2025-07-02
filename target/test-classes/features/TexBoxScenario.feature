@@ -25,8 +25,11 @@ Feature: Text Box Test Cases
     Given Going To Page Text Box
     When Fill Full Name <FullName>
     And Fill Email <Email>
+    And Fill Current Address <currentAddress>
+    And Fill Permanent Address <permanentAddress>
+    Then Click Submit
 
     Examples: 
-      |  FullName     | Email                   |
-      | "Test Name"   | "test1@test.com"        |
-      | "Test1 Name2" | "test2@test.com"        |
+      |  FullName     | Email                   |  currentAddress   |  permanentAddress |
+      | "Test Name"   | "test1@test.com"        |  "Address C1"     |  "Address P1"     |
+      | "Test1 Name2" | "test2@test.com"        |  "Address C2"     |  "Address P2"     |
